@@ -1,0 +1,49 @@
+name: urlwatch
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 1 * * *'
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.3'
+      - name: Cache pip
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip wheel
+          pip install pyyaml minidb requests keyring appdirs lxml cssselect html2text urlwatch
+      - name: Download cached db
+        continue-on-error: true
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: main.yml
+          workflow_conclusion: completed
+          branch: master
+          name: cachedb
+      - name: Run urlwatch
+        run: |
+          urlwatch --config=urlwatch.yaml --urls=urls.yaml --cache=cache.db
+      - name: Upload updated db
+        uses: actions/upload-artifact@v2
+        with:
+          name: cachedb
+          path: cache.db

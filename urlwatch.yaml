@@ -1,0 +1,59 @@
+display:
+  error: false
+  new: true
+  unchanged: false
+job_defaults:
+  all: {}
+  url: {}
+  browser: {}
+  shell: {}
+report:
+  email:
+    enabled: true
+    from: 'URLWatch<example@gmail.com>'
+    html: true
+    method: smtp
+    smtp:
+      host: smtp.gmail.com
+      auth: true
+      insecure_password: gmail_app_password
+      port: 587
+      starttls: true
+      user: 'example@gmail.com'
+    subject: '{count} url(s) changed: {jobs}'
+    to: 'User<mail@example.com>'
+  html:
+    diff: unified
+  mailgun:
+    api_key: ''
+    domain: ''
+    enabled: false
+    from_mail: ''
+    from_name: ''
+    region: us
+    subject: '{count} changes: {jobs}'
+    to: ''
+  pushbullet:
+    api_key: ''
+    enabled: false
+  pushover:
+    app: ''
+    device: ''
+    enabled: false
+    sound: spacealarm
+    user: ''
+  slack:
+    enabled: false
+    webhook_url: ''
+  stdout:
+    color: true
+    enabled: true
+  telegram:
+    bot_token: ''
+    chat_id: ''
+    enabled: false
+  text:
+    details: true
+    footer: false
+    line_length: 75
+    minimal: false
