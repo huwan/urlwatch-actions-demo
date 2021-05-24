@@ -20,4 +20,4 @@ This demo shows:
  - Run urlwatch workflow when specific activity on GitHub happens (e.g., push), at a scheduled time (using posix cron syntax), or you can manually trigger workflow runs.
  - Store workflow data, i.e., database file for change history, as workflow artifact.
 
-**Caution**: This demo use cleartext app password for e-mail reporter in urlwatch.yaml file. To preventing password leaks, use a private github repository.
+**Caution**: This demo use cleartext app password for e-mail reporter in urlwatch.yaml file. To prevent password leaks, use a private github repository.
