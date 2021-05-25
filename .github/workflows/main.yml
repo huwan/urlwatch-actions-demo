@@ -39,6 +39,9 @@ jobs:
           workflow_conclusion: completed
           branch: master
           name: cachedb
+      - name: Set secret
+        run: |
+          sed -i "s/gmail_app_password/${{ secrets.GMAIL_APP_PASSWORD }}/" urlwatch.yaml
       - name: Run urlwatch
         run: |
           urlwatch --config=urlwatch.yaml --urls=urls.yaml --cache=cache.db

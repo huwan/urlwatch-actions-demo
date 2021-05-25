@@ -10,7 +10,7 @@ job_defaults:
 report:
   email:
     enabled: true
-    from: 'URLWatch<example@gmail.com>'
+    from: 'URLWatch<imengyingchina@gmail.com>'
     html: true
     method: smtp
     smtp:
@@ -21,7 +21,7 @@ report:
       starttls: true
       user: 'example@gmail.com'
     subject: '{count} url(s) changed: {jobs}'
-    to: 'User<mail@example.com>'
+    to: 'User<imengyingchina@gmail.com>'
   html:
     diff: unified
   mailgun:
