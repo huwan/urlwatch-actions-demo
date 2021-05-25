@@ -8,7 +8,7 @@
                                   ... monitors webpages for you
 ```
 
-DEMO: Running [urlwatch](https://github.com/thp/urlwatch) on github with github actions
+DEMO: Running [urlwatch](https://github.com/thp/urlwatch) on github with [github actions](https://github.com/huwan/urlwatch-actions-demo/actions)
 
 urlwatch config files:
  - `urlwatch.yaml`: config file, e.g., set up e-mail sending
