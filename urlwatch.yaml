@@ -19,7 +19,7 @@ report:
       insecure_password: gmail_app_password
       port: 587
       starttls: true
-      user: 'example@gmail.com'
+      user: 'imengyingchina@gmail.com'
     subject: '{count} url(s) changed: {jobs}'
     to: 'User<imengyingchina@gmail.com>'
   html:
