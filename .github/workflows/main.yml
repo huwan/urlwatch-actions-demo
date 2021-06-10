@@ -14,6 +14,10 @@ jobs:
 
     runs-on: ubuntu-20.04
     steps:
+      - name: Setup timezone
+        uses: zcong1993/setup-timezone@v1.1.1
+        with:
+          timezone: Asia/Hong_Kong
       - uses: actions/checkout@v2
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
