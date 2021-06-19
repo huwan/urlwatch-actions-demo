@@ -54,3 +54,4 @@ jobs:
         with:
           name: cachedb
           path: cache.db
+          retention-days: 1
